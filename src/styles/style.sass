@@ -135,6 +135,7 @@ button
         left: 15%
         right: 55.2%
         top: 0px
+        animation: shoe-info 2s 1s backwards
         //background: yellow
         >.detail-price
             color: green
@@ -154,9 +155,9 @@ button
         height: 480px
         background-repeat: no-repeat
         background-size: contain
+        animation: shoe 1s
         //border: 1px black solid
-        >img
-            width: 50%
+                
     .size-p
         display: inline
 
@@ -248,4 +249,16 @@ button
         
 
 //use flex box to centre .home content
+@keyframes shoe
+    0%
+        transform: rotate(10deg)
+        margin-top: -100px
 
+    100%
+        transform: rotate(0deg)
+        margin-top: 0px
+@keyframes shoe-info
+    0%
+        opacity: 0
+    100%
+        opacity: 1

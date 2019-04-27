@@ -119,7 +119,8 @@ button {
     position: absolute;
     left: 15%;
     right: 55.2%;
-    top: 0px; }
+    top: 0px;
+    animation: shoe-info 2s 1s backwards; }
     .Detail .detail-info > .detail-price {
       color: green;
       font-size: 1.5em; }
@@ -136,9 +137,8 @@ button {
     left: 45.2%;
     height: 480px;
     background-repeat: no-repeat;
-    background-size: contain; }
-    .Detail .detail-pic > img {
-      width: 50%; }
+    background-size: contain;
+    animation: shoe 1s; }
   .Detail .size-p {
     display: inline; }
 
@@ -211,3 +211,17 @@ button {
     margin-bottom: 12px; }
     .footer li:hover {
       color: white; }
+
+@keyframes shoe {
+  0% {
+    transform: rotate(10deg);
+    margin-top: -100px; }
+  100% {
+    transform: rotate(0deg);
+    margin-top: 0px; } }
+
+@keyframes shoe-info {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
