@@ -8,7 +8,7 @@ class Men extends React.Component {
         return (
             <div className='Home'>
                 <Consume>
-                    {val=>val.data.map(item=><Item x={item} addCart={val.addCart} addDetail={val.addDetail}/>)}
+                    {val=>val.data.map(item=><Item key={item.id} x={item} addCart={val.addCart} addDetail={val.addDetail}/>)}
                 </Consume>
             </div>
         );

@@ -29,7 +29,7 @@ class Cart extends Component {
                         }else{return(
                             [                               
                                 cart.map(itemm=>
-                                    <div className='cart'>
+                                    <div className='cart' key={itemm.id}>
                                         <NavLink to='/detail'>
                                             <div 
                                                 className='cart-pic' 

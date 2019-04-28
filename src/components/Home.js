@@ -37,9 +37,9 @@ class Home extends Component {
                                 const trending=val.data.filter(item=>{if(item.id>3&&item.id<7){return true}})
                                 return [
                                     <h2 className='home-head'>On Sale</h2>,
-                                    onsale.map(item=><Item x={item} addCart={val.addCart} addDetail={val.addDetail}/>),
-                                    <h2 className='home-head'>Trending</h2>,
-                                    trending.map(item=><Item x={item} addCart={val.addCart} addDetail={val.addDetail}/>)
+                                    onsale.map(item=><Item key={item.id} x={item} addCart={val.addCart} addDetail={val.addDetail}/>),
+                                    <h2 className='home-head'>Trendings</h2>,
+                                    trending.map(item=><Item key={item.id} x={item} addCart={val.addCart} addDetail={val.addDetail}/>)
                                 ]
                             }
                         }
