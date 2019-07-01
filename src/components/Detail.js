@@ -6,28 +6,31 @@ const Detail = () => {
         <Consume>
             {val=>
             <div className='Detail'>
-                <div className='detail-info'>
-                    <h2>{val.detail.name}</h2>
-                    <p>{val.detail.details}</p>
-                    <p className='size-p'>select size: </p>
-                    <select className='size'  onChange={(e)=>{val.size(e,val.detail.id)}}>
-                        <option value= '4' >4</option>
-                        <option value='5'>5</option>
-                        <option value='6'>6</option>
-                        <option value='7'>7</option>
-                        <option value='8'>8</option>
-                        <option value='9'>9</option>
-                        <option value='10'>10</option>
-                        <option value='11'>11</option>
-                        <option value= '12'>12</option>
-                        
-                    </select>
-                    <p className='detail-price'>${val.detail.price}</p>
-                    <button onClick={val.addCart.bind(this,val.detail.id)}><NavLink to='/cart'>add to cart</NavLink></button>
-                    <button><NavLink to='/'>Continue</NavLink></button>
+                {val.detail ?
+                <div> 
+                    <div className='detail-info'>
+                        <div className='detail-head'>
+                            <h2>{val.detail.name}</h2>
+                            <div>
+                                <NavLink to='/cart'><button onClick={val.addCart.bind(this,val.detail.id)}>add to cart</button></NavLink>
+                                <NavLink to='/'><button>Continue</button></NavLink>
+                            </div>
+                        </div>
+                        <p>{val.detail.details}</p>
+                        <p className='size-p'>select size: </p>
+                        <select className='size'  onChange={(e)=>{val.size(e,val.detail.id)}}>
+                            <option value= 'XS' >XS</option>
+                            <option value='S'>S</option>
+                            <option value='M'>M</option>
+                            <option value='L'>L</option>
+                            <option value='XL'>XL</option>
+                            <option value='XXL'>XXL</option> 
+                        </select>
+                        <p className='detail-price'>${val.detail.price}</p>
+                    </div>
+                    <div className='detail-pic' style={{backgroundImage: `url(${require(`../images/${val.detail.pic}`)})` ,backgroundPosition: 'center'  }}></div>
                 </div>
-                <div className='detail-pic' style={{backgroundImage: `url(${require(`../images/${val.detail.pic}`)})` }}>
-                </div>
+                :<h2>house</h2> }
             </div>
             }
         </Consume>
