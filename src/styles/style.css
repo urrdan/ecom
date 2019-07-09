@@ -29,7 +29,8 @@ button {
   position: sticky;
   top: 0;
   width: 100%;
-  border-bottom: 0.3px gray solid; }
+  border-bottom: 0.3px gray solid;
+  z-index: 3; }
   .TopMenu * {
     vertical-align: middle; }
   .TopMenu > * {
@@ -56,27 +57,67 @@ button {
   margin: auto;
   text-align: center; }
   .Home .home-intro {
-    background: #000;
-    height: 300px;
+    height: 400px;
     margin: 0px;
-    border: solid red;
+    color: white;
+    justify-content: center;
+    display: grid;
+    align-items: center;
+    position: relative;
+    background: url("../images/shoehome.jpg") bottom;
+    background-size: 100%;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 100% 50px; }
+    border-bottom-left-radius: 50%  150px;
+    border-bottom-right-radius: 50% 150px; }
+    .Home .home-intro > * {
+      z-index: 1; }
+    .Home .home-intro section {
+      display: flex;
+      flex-direction: column; }
+      .Home .home-intro section p:first-of-type {
+        font-size: 25px;
+        font-weight: bolder; }
+    .Home .home-intro .contacts {
+      align-self: end; }
+      .Home .home-intro .contacts img {
+        background: white;
+        margin: 10px;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        padding: 5px;
+        border: 1px solid blue; }
+    .Home .home-intro:after {
+      content: '';
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      position: absolute;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 50%  150px;
+      border-bottom-right-radius: 50% 150px; }
   .Home .category {
-    text-align: center; }
-    .Home .category > * {
-      display: inline-block; }
-      .Home .category > *:not(:last-child) {
-        margin-right: 10px; }
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    .Home .category > div {
+      margin-top: -70px; }
     .Home .category img {
-      height: 200px; }
+      height: 250px;
+      width: 270px;
+      position: relative; }
   .Home .home-head {
     color: gray;
     margin: 80px 0px 0px 80px;
     text-align: left;
     border-bottom: solid 0.5px; }
+  .Home .all-collection {
+    display: block;
+    margin: 100px auto 50px; }
 
 .Item {
   display: inline-block;
@@ -115,7 +156,7 @@ button {
     .Item section p {
       color: gray; }
     .Item section h3 {
-      color: gray;
+      color: blue;
       font-weight: 400; }
 
 .Detail {
@@ -169,7 +210,6 @@ button {
       background: no-repeat;
       background-size: contain; }
     .Cart .cart .quantity {
-      color: red;
       float: right;
       margin-right: 140px; }
       .Cart .cart .quantity > * {
@@ -177,7 +217,8 @@ button {
         margin-left: 5px; }
     .Cart .cart .cart-price {
       float: right;
-      font-size: 2em; }
+      font-size: 2em;
+      color: blue; }
   .Cart .checkout {
     width: 350px;
     text-align: center;

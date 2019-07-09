@@ -32,6 +32,7 @@ button
     top: 0
     width: 100%
     border-bottom: 0.3px gray solid
+    z-index: 3
     *
         vertical-align: middle
     >*
@@ -52,7 +53,7 @@ button
             
     p
         display: inline-block
-        margin: 5px 2px
+        margin: 5px 2px 
         color: white
     img
         filter: invert(1)
@@ -63,30 +64,80 @@ button
     //background: #2B5876
     text-align: center
     .home-intro
-        background: #000
-        height: 300px
+        //background: #000
+        
+        height: 400px
         margin: 0px
-        //background: url('../images/shoehome.jpg') bottom
-        //background-size: 100%  
-        border: solid red
+        color: white
+        //display: flex
+        //flex-direction: column
+        justify-content: center
+        display: grid
+
+        align-items: center
+        position: relative
+        background: url('../images/shoehome.jpg') bottom
+        background-size: 100%  
+        //border: solid red
         border-top-left-radius: 0px
         border-top-right-radius: 0px
         border-bottom:
-            left-radius: 20px
-            right-radius: 100% 50px 
+            left-radius: 50%  150px
+            right-radius: 50% 150px 
+        >*
+            z-index: 1
+        section
+            
+            display: flex
+            flex-direction: column
+            p:first-of-type
+                font-size: 25px
+                font-weight: bolder
+            p:last-of-type
+        .contacts
+            align-self: end 
+            img
+                background: white
+                margin: 10px
+                width: 25px
+                height: 25px
+                border-radius: 50%
+                padding: 5px
+                border: 1px solid blue
+        &:after
+            content: ''
+            left: 0
+            width: 100%
+            height: 100%
+            background: rgba(0,0,0,0.7)
+            position: absolute
+            border-top-left-radius: 0px
+            border-top-right-radius: 0px
+            border-bottom:
+                left-radius: 50%  150px
+                right-radius: 50% 150px 
+
     .category
         text-align: center
-        >*
-            display: inline-block
-            &:not(:last-child)
-                margin-right: 10px
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        >div
+            //position: relative
+            margin-top: -70px
         img
-            height: 200px
+            height: 250px
+            width: 270px
+            position: relative
+
     .home-head
         color: gray
         margin: 80px 0px 0px 80px
         text-align: left
         border-bottom: solid 0.5px
+    .all-collection
+        display: block
+        margin: 100px auto 50px
 .Item
     display: inline-block
     margin: 25px
@@ -136,7 +187,7 @@ button
             color: gray
 
         h3
-            color: gray
+            color: blue
             font-weight: 400 
             
 
@@ -206,7 +257,7 @@ button
         .cart-sec
             //background: yellow
         .quantity
-            color: red
+            //color: red
             float: right
             margin-right: 140px
             >*
@@ -215,6 +266,7 @@ button
         .cart-price
             float: right
             font-size: 2em
+            color: blue
     .checkout
         //background: yellow
         width: 350px

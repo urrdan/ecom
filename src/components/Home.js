@@ -2,15 +2,29 @@ import React, { Component } from 'react';
 import {NavLink} from 'react-router-dom'
 import Item from './Item'
 import {Consume} from '../context.js'
+import twitter from '../svg/twitter.svg'
+import fb from '../svg/facebook.svg'
+import instagram from '../svg/instagram.svg'
 
 class Home extends Component {
     render() { 
         return (
             <div className='Home'>
                 <div className='home-intro'>
+                    <section>
+                        <p>SHOES</p> 
+                        <p>That will leave you with a lasting smile</p>  
+                    </section>   
+                    <div className='contacts'>
+                        <img src={twitter} alt='Home' height='25px'/>
+                        <img src={fb} alt='Home' height='25px'/>  
+                        <img src={instagram} alt='Home' height='25px'/>  
+                    </div>       
                 </div>
+                
                 <div className='category'>
-                    <div>
+                    
+                    {/* <div>
                         <h1>men</h1>
                         <NavLink to='/men'>
                             <img src={require('../images/men.jpg')}/>
@@ -28,7 +42,7 @@ class Home extends Component {
                         <NavLink to='/men'>
                             <img src={require('../images/kids.jpg')}/>
                         </NavLink>
-                    </div>
+                    </div> */}
                         
                 </div>
 
@@ -46,6 +60,7 @@ class Home extends Component {
                             }
                         }
                 </Consume>
+                <button className='all-collection'>See All Collection</button>
             </div>
         )
     }

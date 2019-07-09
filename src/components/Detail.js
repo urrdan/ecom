@@ -7,13 +7,13 @@ const Detail = () => {
             {val=>
             <div className='Detail'>
                 {val.detail ?
-                <div> 
+                <div>
                     <div className='detail-info'>
                         <div className='detail-head'>
                             <h2>{val.detail.name}</h2>
                             <div>
                                 <NavLink to='/cart'><button onClick={val.addCart.bind(this,val.detail.id)}>add to cart</button></NavLink>
-                                <NavLink to='/'><button>Continue</button></NavLink>
+                                <NavLink to='/'><button>Cancel</button></NavLink>
                             </div>
                         </div>
                         <p>{val.detail.details}</p>
