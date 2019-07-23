@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {NavLink} from 'react-router-dom'
 import Item from './Item'
 import {Consume} from '../context.js'
 import twitter from '../svg/twitter.svg'
@@ -21,30 +20,6 @@ class Home extends Component {
                         <img src={instagram} alt='Home' height='25px'/>  
                     </div>       
                 </div>
-                
-                <div className='category'>
-                    
-                    {/* <div>
-                        <h1>men</h1>
-                        <NavLink to='/men'>
-                            <img src={require('../images/men.jpg')}/>
-                        </NavLink>
-                        
-                    </div>
-                    <div>
-                        <h1>women</h1>
-                        <NavLink to='/men'>
-                            <img src={require('../images/women.jpg')}/>
-                        </NavLink>
-                    </div>
-                    <div>
-                        <h1>kids</h1>
-                        <NavLink to='/men'>
-                            <img src={require('../images/kids.jpg')}/>
-                        </NavLink>
-                    </div> */}
-                        
-                </div>
 
                 <Consume>
                         {val=>
@@ -60,7 +35,20 @@ class Home extends Component {
                             }
                         }
                 </Consume>
-                <button className='all-collection'>See All Collection</button>
+                <button className='all-btn' onClick={function(){
+                    //if(document.querySelector('.all-collection').clientHeight>0){
+                    document.querySelector('.all-collection').style.display='block'
+                    document.querySelector('.all-btn').style.display='none'
+                    //}else{document.querySelector('.all-collection').style.display='block'}
+                    }}>See All Collection</button>
+                <Consume>
+                    {val=>
+                        <div className='all-collection'>
+                            <h2>ALL COLLECTION</h2>
+                            {val.data.map(item=><Item key={item.id} x={item} addCart={val.addCart} addDetail={val.addDetail}/>)}
+                        </div>
+                    }
+                </Consume>
             </div>
         )
     }

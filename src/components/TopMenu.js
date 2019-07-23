@@ -17,8 +17,14 @@ const TopMenu = () => {
                                     <img src={Home} alt='Home' height='25px'/>
                                 </NavLink>
                             </div>
+                            <select className='gender' >
+                                <option value= 'XS' >--All--</option>
+                                <option value='S'>Men</option>
+                                <option value='M'>Women</option>
+                                <option value='Kids'>Kids</option> 
+                            </select>
                             <div className='search'>
-                                <input type='text' placeholder='Search'/> <img src={Search} alt='Search' height='25px' className='srch'/>
+                                {<input type='text' placeholder='Search'/>} <img src={Search} alt='Search' height='25px' className='srch'/>
                             </div>
                             <div>
                                 <NavLink to='/cart'>

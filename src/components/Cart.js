@@ -15,7 +15,7 @@ class Cart extends Component {
     render() { 
         
         return (
-            <div className='Cart'>
+            <div className='cart'>
                 <Consume>
                     {val=>{
                         var cart=val.data.filter(item=>{
@@ -29,37 +29,40 @@ class Cart extends Component {
                         }else{return(
                             [                               
                                 cart.map(itemm=>
-                                    <div className='cart' key={itemm.id}>
-                                        <NavLink to='/detail'>
-                                            <div 
-                                                className='cart-pic' 
-                                                style={{backgroundImage: `url(${require(`../images/${itemm.pic}`)})`}}
-                                                onClick={val.addDetail.bind(this,itemm.id)}
-                                            >
-                                            
-                                            </div>
-                                        </NavLink>
-                                        
-                                        <div className='cart-sec'>
-                                            <h3>{itemm.name}</h3>
-                                            <p>size {itemm.size}</p>
-                                            <button onClick={val.removeCart.bind(this, itemm.id)}>delete</button>
-                                        </div>
-                                        
-                                        <div className='cart-price'>${itemm.price*itemm.quantity? itemm.price*itemm.quantity : itemm.price}</div>
-                                        <div className='quantity'>
-                                            <p>${itemm.price} x </p>
-                                            <select  onChange={(e)=>{val.quantity(e,itemm.id)}}>
-                                                <option value='1'>1</option>
-                                                <option value='2'>2</option>
-                                                <option value='3'>3</option>
-                                                <option value='4'>4</option>
-                                                <option value='5'>5</option>
-                                                <option value='6'>6</option>
-                                                <option value='7'>7</option>
-                                                <option value='8'>8</option>
+                                    <div className='cart-item' key={itemm.id}>
+                                        <div>
+                                            <NavLink to='/detail'>
+                                                <div 
+                                                    className='cart-pic' 
+                                                    style={{backgroundImage: `url(${require(`../images/${itemm.pic}`)})`}}
+                                                    onClick={val.addDetail.bind(this,itemm.id)}
+                                                >
                                                 
-                                            </select>
+                                                </div>
+                                            </NavLink>
+                                            
+                                            <div className='cart-sec'>
+                                                <h3>{itemm.name}</h3>
+                                                <p>size {itemm.size?itemm.size: 'M'}</p>
+                                                <button onClick={val.removeCart.bind(this, itemm.id)}>delete</button>
+                                            </div>
+                                        </div>
+                                        <div> 
+                                            <div className='quantity'>
+                                                <p>${itemm.price} x </p>
+                                                <select  onChange={(e)=>{val.quantity(e,itemm.id)}}>
+                                                    <option value='1'>1</option>
+                                                    <option value='2'>2</option>
+                                                    <option value='3'>3</option>
+                                                    <option value='4'>4</option>
+                                                    <option value='5'>5</option>
+                                                    <option value='6'>6</option>
+                                                    <option value='7'>7</option>
+                                                    <option value='8'>8</option>
+                                                    
+                                                </select>
+                                            </div>
+                                            <div className='cart-price'>${itemm.price*itemm.quantity? itemm.price*itemm.quantity : itemm.price}</div>
                                         </div>
                                     </div>                                                                 
                                 ),
