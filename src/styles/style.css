@@ -10,11 +10,17 @@ body, html {
   text-decoration: none;
   outline: none; }
 
+.heading {
+  color: gray;
+  margin: 80px 5% 50px 10%;
+  text-align: left;
+  border-bottom: solid 0.5px; }
+
 button {
-  color: blue;
-  background: none;
+  color: white;
+  background: blue;
   border-radius: 20px;
-  border: solid;
+  border: solid blue;
   padding: 4px 20px;
   cursor: pointer; }
   button:hover {
@@ -25,46 +31,70 @@ button {
   height: 100%; }
 
 .TopMenu {
-  background: #29323c;
   position: sticky;
   top: 0;
-  padding: 0 30px;
-  width: 100%;
-  z-index: 3;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 5px 15px; }
-  .TopMenu * {
-    vertical-align: middle; }
-  .TopMenu .gender {
-    font-weight: bold;
-    background: none;
-    color: gray;
-    font-size: 20px;
-    border-radius: 3px; }
-  .TopMenu > .search {
-    display: inherit;
-    width: 40%;
-    border: white 1px solid;
-    border-radius: 5px;
-    padding: 3px; }
-    .TopMenu > .search > * {
-      margin: 0px; }
-    .TopMenu > .search input {
-      width: 700px;
-      height: 25px;
-      min-width: 160px;
-      padding: 0px 16px;
+  z-index: 3; }
+
+.TopMenu1 {
+  background: #29323c;
+  width: 100%; }
+  .TopMenu1 .max-width {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 8%;
+    margin: auto; }
+    .TopMenu1 .max-width * {
+      vertical-align: middle; }
+    .TopMenu1 .max-width .gender {
+      font-weight: bold;
       background: none;
+      color: gray;
+      font-size: 18px;
+      border-radius: 3px; }
+    .TopMenu1 .max-width .search {
+      display: inherit;
+      width: 40%;
+      border: white 1px solid;
+      border-radius: 5px;
+      padding: 3px; }
+      .TopMenu1 .max-width .search > * {
+        margin: 0px; }
+      .TopMenu1 .max-width .search input {
+        width: 700px;
+        height: 20px;
+        min-width: 100px;
+        padding: 0px 16px;
+        background: none;
+        color: white;
+        border: none; }
+    .TopMenu1 .max-width p {
+      display: inline-block;
+      margin: 5px 2px;
+      color: white; }
+    .TopMenu1 .max-width img {
+      filter: invert(1); }
+
+.TopMenu2 {
+  background: #660000;
+  padding: 4px; }
+  .TopMenu2 ul {
+    padding: 0;
+    margin: 0;
+    margin: auto;
+    max-width: 1200px; }
+    .TopMenu2 ul li {
+      display: inline-block;
+      margin: 0 40px 0 0;
+      font-weight: bold;
       color: white;
-      border: none; }
-  .TopMenu p {
-    display: inline-block;
-    margin: 5px 2px;
-    color: white; }
-  .TopMenu img {
-    filter: invert(1); }
+      font-size: 18px;
+      cursor: pointer; }
+      .TopMenu2 ul li:hover {
+        color: #6464ff; }
+    .TopMenu2 ul a:visited {
+      color: green; }
 
 .Home {
   margin: auto;
@@ -125,25 +155,18 @@ button {
       height: 250px;
       width: 270px;
       position: relative; }
-  .Home .home-head {
-    color: gray;
-    margin: 80px 0px 0px 80px;
-    text-align: left;
-    border-bottom: solid 0.5px; }
   .Home .all-btn {
     display: block;
     margin: 100px auto 50px; }
   .Home .all-collection {
     display: none;
-    max-width: 900px;
+    max-width: 800px;
     margin: 150px auto; }
 
 .Item {
   display: inline-block;
   margin: 25px;
   width: 190px; }
-  .Item:hover {
-    border: 1px black solid; }
   .Item .pic {
     height: 230px;
     text-align: center;
@@ -153,16 +176,24 @@ button {
     justify-content: center;
     align-items: center;
     position: relative; }
+    .Item .pic:hover > .pic-bg {
+      transform: scale(0.8); }
+    .Item .pic:hover img {
+      transform: scale(1.2); }
     .Item .pic .pic-bg {
       position: absolute;
       background: white;
       width: 160px;
       height: 160px;
       border-radius: 200px;
-      z-index: -1; }
+      z-index: 0;
+      transition: 0.6s; }
+    .Item .pic a {
+      z-index: 1; }
     .Item .pic img {
       max-width: 220px;
-      max-height: 240px; }
+      max-height: 240px;
+      transition: 0.6s; }
   .Item section {
     padding: 5px;
     font-family: Muli;
@@ -173,17 +204,23 @@ button {
     .Item section h1 {
       font-weight: 400; }
     .Item section p {
-      color: gray; }
+      color: gray;
+      font-style: italic;
+      font-family: 'Roboto Mono'; }
     .Item section h3 {
       color: #660000;
       font-weight: 400; }
+    .Item section .old-price {
+      opacity: .5;
+      text-decoration: line-through; }
 
 .Detail {
   width: 100%;
-  background: gray; }
-  .Detail .cart-btn-top {
+  background: #aaaaaa;
+  padding: 1px; }
+  .Detail .cart-btn-btm {
     display: none; }
-  .Detail > div {
+  .Detail .grid-cont {
     width: 100%;
     max-width: 900px;
     margin: auto;
@@ -192,19 +229,19 @@ button {
   .Detail .detail-head {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     grid-column: 1/3;
     padding: 0 20px;
     margin-top: 30px; }
     .Detail .detail-head h2 {
-      margin: 0; }
+      margin: 0 30px 0 0; }
   .Detail .detail-info {
     animation: shoe-info 2s  backwards;
     padding: 20px; }
     .Detail .detail-info .detail-price {
       color: #660000;
-      font-size: 4em; }
+      font-size: 60px;
+      margin: 30px 0px; }
   .Detail .detail-pic {
     animation: shoe 1s;
     align-self: start;
@@ -215,8 +252,20 @@ button {
     color: #3c3c3c; }
   .Detail .size {
     cursor: pointer; }
-  .Detail a {
+  .Detail .cart-btns a {
     margin-right: 10px; }
+    .Detail .cart-btns a:last-child button {
+      background: none;
+      color: blue;
+      border: solid; }
+      .Detail .cart-btns a:last-child button:hover {
+        background: #78789b; }
+  .Detail .also-buy h2 {
+    color: black; }
+  .Detail .also-buy .similar {
+    max-width: 500px;
+    margin: auto;
+    text-align: center; }
 
 .cart {
   min-height: 400px;
@@ -239,6 +288,10 @@ button {
       height: 140px;
       background: no-repeat;
       background-size: contain; }
+    .cart .cart-item .cart-sec p {
+      color: #464646; }
+    .cart .cart-item .cart-sec span {
+      font-weight: bold; }
     .cart .cart-item .quantity > * {
       display: inline-block; }
     .cart .cart-item .cart-price {
@@ -261,12 +314,20 @@ button {
       .cart .checkout section > * {
         margin: 8px 0px;
         font-size: 32px; }
+      .cart .checkout section > :first-child {
+        font-style: italic; }
+      .cart .checkout section > :last-child {
+        font-weight: bold; }
     .cart .checkout button {
       clear: both;
       display: block;
       margin: auto;
       margin-top: 120px;
       font-size: 1.5em; }
+
+.wo-men-kids {
+  max-width: 800px;
+  margin: auto; }
 
 .footer {
   background: #323232;
@@ -283,6 +344,10 @@ button {
     .footer li:hover {
       color: white; }
 
+.Men, .Women, .Kids {
+  max-width: 1200px;
+  margin: auto; }
+
 @keyframes shoe {
   0% {
     transform: rotate(10deg);
@@ -297,17 +362,25 @@ button {
   100% {
     opacity: 1; } }
 
+@media screen and (max-width: 600px) {
+  .Detail .cart-btn-top {
+    display: none; }
+  .Detail .cart-btn-btm {
+    display: block;
+    white-space: nowrap; } }
+
 @media screen and (max-width: 470px) {
-  .TopMenu .search {
+  .TopMenu1 .max-width .search {
     border: none;
     width: auto; }
-    .TopMenu .search input {
+    .TopMenu1 .max-width .search input {
       display: none; }
   .Home .home-intro {
     height: auto; }
-  .Detail > div {
+  .Detail .grid-cont {
     grid-template-columns: 1fr; }
   .Detail .detail-head {
     grid-column: 1/2; }
   .Detail .detail-pic {
-    grid-row: 2/3; } }
+    grid-row: 2/3;
+    max-width: 50%; } }

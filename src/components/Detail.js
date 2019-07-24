@@ -1,13 +1,18 @@
 import React from 'react'
 import {Consume} from '../context.js'
 import {NavLink} from 'react-router-dom'
+import Item from './Item'
 const Detail = () => {
     return (
         <Consume>
-            {val=>
-            <div className='Detail'>
+            {val=>{
+            const similar=val.data.filter(item=>{
+                if(item.id+1==val.detail.id || item.id-1==val.detail.id){return true}
+            })
+            return <div className='Detail'>
                 {val.detail ?
                 <div>
+                <div className='grid-cont'>
                     <div className='detail-head'>
                         <h2>{val.detail.name}</h2>
                         <div className='cart-btns cart-btn-top'>
@@ -36,9 +41,16 @@ const Detail = () => {
                     <img className='detail-pic' src={require(`../images/${val.detail.pic}`)} alt=''/>
                     {/* <div className='detail-pic' style={{backgroundImage: `url(${require(`../images/${val.detail.pic}`)})` ,backgroundPosition: 'center'  }}></div> */}
                 </div>
-                :<h2>house</h2> }
+                <div className='also-buy'>
+                    <h2 className='heading'>Customers Also Buy</h2>
+                    <div className='similar'>
+                        {similar.map(item=><Item key={item.id} x={item} addCart={val.addCart} addDetail={val.addDetail}/>)}
+                    </div>
+                </div>
+                </div>
+                :<h2>Please select a shoe</h2> }
             </div>
-            }
+            }}
         </Consume>
     );
 }

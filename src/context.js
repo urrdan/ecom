@@ -66,7 +66,7 @@ class Provide  extends React.Component {
         
     } 
     size (e,id) {
-        e.persist()
+        e.persist()//need to learn more about this interesting phenomenon
         this.setState(prev=>{
             const updated=prev.data.map(item=>{
                 if(item.id===id){

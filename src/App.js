@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import TopMenu from './components/TopMenu'
 import Home from './components/Home'
 import Men from './components/Men'
+import Women from './components/Women'
+import Kids from './components/Kids'
 import Cart from './components/Cart'
 import Detail from './components/Detail'
 import {Route, Switch} from 'react-router-dom'
@@ -13,8 +15,11 @@ class App extends Component {
         <TopMenu/>
         <Switch>
           <Route exact path='/' component={Home}/>
-          <Route path='/cart' component={Cart}/>
           <Route  path='/detail' component={Detail}/>
+          <Route path='/cart' component={Cart}/>
+          <Route path='/men' component={Men}/>
+          <Route path='/women' component={Women}/>
+          <Route path='/kids' component={Kids}/>
         </Switch>
         <footer className='footer'>
           <ul>

@@ -24,12 +24,12 @@ class Home extends Component {
                 <Consume>
                         {val=>
                             {
-                                const onsale=val.data.filter(item=>{if(item.id<=3){return true}})
-                                const trending=val.data.filter(item=>{if(item.id>3&&item.id<7){return true}})
+                                const onsale=val.data.filter(item=>{if(item.onsale){return true}})
+                                const trending=val.data.filter(item=>{if(item.id>15&&item.id<19){return true}})
                                 return [
-                                    <h2 className='home-head'>On Sale</h2>,
+                                    <h2 className='heading'>On Sale</h2>,
                                     onsale.map(item=><Item key={item.id} x={item} addCart={val.addCart} addDetail={val.addDetail}/>),
-                                    <h2 className='home-head'>Trendings</h2>,
+                                    <h2 className='heading'>Trendings</h2>,
                                     trending.map(item=><Item key={item.id} x={item} addCart={val.addCart} addDetail={val.addDetail}/>)
                                 ]
                             }

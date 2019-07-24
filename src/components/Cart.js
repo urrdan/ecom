@@ -43,7 +43,7 @@ class Cart extends Component {
                                             
                                             <div className='cart-sec'>
                                                 <h3>{itemm.name}</h3>
-                                                <p>size {itemm.size?itemm.size: 'M'}</p>
+                                                <p>size: <span>{itemm.size?itemm.size: 'M'}</span></p>
                                                 <button onClick={val.removeCart.bind(this, itemm.id)}>delete</button>
                                             </div>
                                         </div>
@@ -72,7 +72,7 @@ class Cart extends Component {
                                     <section><p>Bought</p><p>${Math.round(this.cartTotal(cart)*100)/100}</p></section>
                                     <section><p>Tax</p><p>${Math.round(this.cartTotal(cart,.08)*100)/100}</p></section>
                                     <section><p>Total</p><p>${Math.round(this.cartTotal(cart,1.08)*100)/100}</p></section>
-                                    <button>Checkout &rarr;</button>
+                                    <button  onClick={()=>alert('Thank you for shopping with us we really appreciate you choose us' )}>Checkout &rarr;</button>
                                     
                                 </div>
                             ]
