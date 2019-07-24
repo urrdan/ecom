@@ -12,10 +12,9 @@ class App extends Component {
       <div className='main'>
         <TopMenu/>
         <Switch>
-          <Route path='/' component={Home}/>
-          <Route exact path='/men' component={Men}/>
-          <Route exact path='/cart' component={Cart}/>
-          <Route exact path='/detail' component={Detail}/>
+          <Route exact path='/' component={Home}/>
+          <Route path='/cart' component={Cart}/>
+          <Route  path='/detail' component={Detail}/>
         </Switch>
         <footer className='footer'>
           <ul>
