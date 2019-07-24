@@ -7,5 +7,5 @@ import ScrollToTop from './ScrollToTop'
 
 import './styles/style.css'
 
-ReactDOM.render(<Provide><BrowserRouter ><ScrollToTop><App /></ScrollToTop></BrowserRouter></Provide>, document.getElementById('root'));
+ReactDOM.render(<Provide><BrowserRouter basename='ecom'><ScrollToTop><App /></ScrollToTop></BrowserRouter></Provide>, document.getElementById('root'));
 //<BrowserRouter basename={process.env.PUBLIC_URL}>
