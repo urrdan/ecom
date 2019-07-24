@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/ecom/static/media/lofers.c14f5cb0.png"
   },
   {
-    "revision": "c40b0affe885cfd82176",
+    "revision": "75456faf7e741f674792",
     "url": "/ecom/static/css/main.88cc8b34.chunk.css"
   },
   {
@@ -76,8 +76,8 @@ self.__precacheManifest = [
     "url": "/ecom/static/media/lime.da2a3a89.png"
   },
   {
-    "revision": "c40b0affe885cfd82176",
-    "url": "/ecom/static/js/main.642847f2.chunk.js"
+    "revision": "75456faf7e741f674792",
+    "url": "/ecom/static/js/main.06722436.chunk.js"
   },
   {
     "revision": "6850d86c8ba673a13f7e5cf35b9612f7",
@@ -152,7 +152,7 @@ self.__precacheManifest = [
     "url": "/ecom/static/media/yeezy.3c0aaad7.png"
   },
   {
-    "revision": "918038f8e5905dd75d0c1ec6f04f4fc2",
+    "revision": "971f1ba37cc4974b4b8494d8b4597e75",
     "url": "/ecom/index.html"
   }
 ];
