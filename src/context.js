@@ -8,17 +8,19 @@ class Provide  extends React.Component {
         super()
         this.state = { 
             data: Data,
-            detail: ''
+            detail: '',
+            search: []
         }
         this.addCart=this.addCart.bind(this)
         this.removeCart=this.removeCart.bind(this)
         this.addDetail=this.addDetail.bind(this)
         this.quantity=this.quantity.bind(this)
         this.size=this.size.bind(this)
+        this.searcher=this.searcher.bind(this)
     }
     addCart(id){
         this.setState(prev=>{
-            const updated=prev.data.map(item=>{
+            const updated = prev.data.map(item=>{
                 if(item.id===id){
                     item.cart=true
                 }
@@ -49,6 +51,7 @@ class Provide  extends React.Component {
             })
             return {detail: updated[0]}
         })
+        console.log('excited')
     }
 
     quantity (e,id) {
@@ -79,10 +82,42 @@ class Provide  extends React.Component {
         })
         
     } 
+    searcher (e) {
+        e.persist()//need to learn more about this interesting phenomenon
+        this.setState(prev=>{
+            var valstr=e.target.value
+            console.log('searcher')
+            if(!valstr){console.log('e==')}
+            const updated=prev.data.filter(item=>{
+                if(item.name.toLowerCase().includes(valstr) && valstr ){
+                    var n=item.name.toLowerCase().indexOf(valstr)
+                    var le=valstr.length
+                    item.subname1=item.name.slice(0,n)
+                    item.subname2=item.name.slice(n,n+le)
+                    item.subname3=item.name.slice(n+le)
+                    
+                    //console.log('in')
+                    return true
+                }
+                //return item
+
+            })
+            //console.log(this.state.search)
+            return {search: updated}
+            
+            
+            
+        
+        })
+    } 
+
 
     render() { 
         return ( 
-            <myContext.Provider value={{data:this.state.data, addCart:this.addCart,removeCart:this.removeCart, addDetail:this.addDetail,detail:this.state.detail, quantity:this.quantity, size:this.size}}>
+            <myContext.Provider value={{
+                data:this.state.data, addCart:this.addCart,removeCart:this.removeCart,addDetail:this.addDetail,
+                detail:this.state.detail, quantity:this.quantity, size:this.size, searcher:this.searcher, search:this.state.search
+            }}>
                 {this.props.children}
             </myContext.Provider>
          )

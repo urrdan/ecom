@@ -53,12 +53,18 @@ button {
       color: gray;
       font-size: 18px;
       border-radius: 3px; }
+    .TopMenu1 .max-width p {
+      display: inline-block;
+      margin: 5px 2px; }
+    .TopMenu1 .max-width img {
+      filter: invert(1); }
     .TopMenu1 .max-width .search {
       display: inherit;
       width: 40%;
       border: white 1px solid;
       border-radius: 5px;
-      padding: 3px; }
+      padding: 3px;
+      flex-direction: row-reverse; }
       .TopMenu1 .max-width .search > * {
         margin: 0px; }
       .TopMenu1 .max-width .search input {
@@ -69,12 +75,34 @@ button {
         background: none;
         color: white;
         border: none; }
-    .TopMenu1 .max-width p {
-      display: inline-block;
-      margin: 5px 2px;
-      color: white; }
-    .TopMenu1 .max-width img {
-      filter: invert(1); }
+      .TopMenu1 .max-width .search .search-result {
+        background: white;
+        position: absolute;
+        top: 34px;
+        left: 50%;
+        transform: translate(-50%);
+        box-shadow: 0 5px 10px gray; }
+        .TopMenu1 .max-width .search .search-result .SearchItem {
+          height: 50px;
+          margin: 10px 0; }
+          .TopMenu1 .max-width .search .search-result .SearchItem a > * {
+            display: inline-block;
+            margin: 0 15px;
+            vertical-align: middle; }
+          .TopMenu1 .max-width .search .search-result .SearchItem img {
+            max-width: 50px;
+            max-height: 50px;
+            filter: invert(0); }
+          .TopMenu1 .max-width .search .search-result .SearchItem .search-name {
+            font-weight: bold;
+            font-size: 16px;
+            color: black; }
+            .TopMenu1 .max-width .search .search-result .SearchItem .search-name span:nth-of-type(2) {
+              background: lightblue; }
+          .TopMenu1 .max-width .search .search-result .SearchItem .search-price {
+            color: #660000; }
+          .TopMenu1 .max-width .search .search-result .SearchItem:hover {
+            border: solid gray; }
 
 .TopMenu2 {
   background: #660000;
@@ -90,11 +118,10 @@ button {
       font-weight: bold;
       color: white;
       font-size: 18px;
-      cursor: pointer; }
+      cursor: pointer;
+      font-family: 'Dosis'; }
       .TopMenu2 ul li:hover {
         color: #6464ff; }
-    .TopMenu2 ul a:visited {
-      color: green; }
 
 .Home {
   margin: auto;
@@ -102,7 +129,7 @@ button {
   .Home .home-intro {
     height: 300px;
     margin: 0px;
-    color: white;
+    color: RGB(200, 200, 200);
     justify-content: center;
     display: grid;
     align-items: center;
@@ -121,11 +148,12 @@ button {
       flex-direction: column; }
       .Home .home-intro section p:first-of-type {
         font-size: 25px;
-        font-weight: bolder; }
+        font-weight: bolder;
+        font-family: 'Londrina Shadow'; }
     .Home .home-intro .contacts {
       align-self: end; }
       .Home .home-intro .contacts img {
-        background: white;
+        background: RGB(200, 200, 200);
         margin: 10px;
         width: 25px;
         height: 25px;
@@ -327,7 +355,8 @@ button {
 
 .wo-men-kids {
   max-width: 800px;
-  margin: auto; }
+  margin: auto;
+  text-align: center; }
 
 .footer {
   background: #323232;
@@ -372,9 +401,12 @@ button {
 @media screen and (max-width: 470px) {
   .TopMenu1 .max-width .search {
     border: none;
-    width: auto; }
-    .TopMenu1 .max-width .search input {
-      display: none; }
+    width: 25px;
+    overflow: hidden; }
+    .TopMenu1 .max-width .search:hover {
+      width: 40%;
+      flex-direction: row-reverse;
+      border: solid white 1px; }
   .Home .home-intro {
     height: auto; }
   .Detail .grid-cont {

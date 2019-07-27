@@ -11,7 +11,10 @@ class Cart extends Component {
     cartTotal (cart,x=1) {
         const total=cart.reduce((total,item)=>total+(item.price*(isNaN(item.quantity) ? 1 : item.quantity )),0)
         return total*x
-     }
+    }
+    componentWillUnmount(){
+        console.log('bobobob')
+    }
     render() { 
         
         return (

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Item from './Item'
+import SearchItem from './SearchItem'
 import {Consume} from '../context.js'
 import twitter from '../svg/twitter.svg'
 import fb from '../svg/facebook.svg'
@@ -49,6 +50,7 @@ class Home extends Component {
                         </div>
                     }
                 </Consume>
+        
             </div>
         )
     }
