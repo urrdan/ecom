@@ -85,7 +85,7 @@ class Provide  extends React.Component {
     searcher (e) {
         e.persist()//need to learn more about this interesting phenomenon
         this.setState(prev=>{
-            var valstr=e.target.value
+            var valstr=e.target.value.toLowerCase()
             console.log('searcher')
             if(!valstr){console.log('e==')}
             const updated=prev.data.filter(item=>{

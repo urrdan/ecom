@@ -80,6 +80,9 @@ button {
         position: absolute;
         top: 34px;
         left: 50%;
+        max-height: 90vh;
+        width: 275px;
+        overflow: hidden;
         transform: translate(-50%);
         box-shadow: 0 5px 10px gray; }
         .TopMenu1 .max-width .search .search-result .SearchItem {
