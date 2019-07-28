@@ -55,7 +55,8 @@ button {
       border-radius: 3px; }
     .TopMenu1 .max-width p {
       display: inline-block;
-      margin: 5px 2px; }
+      margin: 5px 2px;
+      color: white; }
     .TopMenu1 .max-width img {
       filter: invert(1); }
     .TopMenu1 .max-width .search {
@@ -188,7 +189,9 @@ button {
       position: relative; }
   .Home .all-btn {
     display: block;
-    margin: 100px auto 50px; }
+    margin: 100px auto 50px;
+    font-size: 30px;
+    padding: 20px 20px; }
   .Home .all-collection {
     display: none;
     max-width: 800px;
