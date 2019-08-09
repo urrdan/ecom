@@ -21,7 +21,7 @@ const Detail = () => {
                         </div>
                     </div>
                     <div className='detail-info'>                        
-                        <p>{val.detail.details}</p>
+                        <p className='detail-p'>{val.detail.details}</p>
                         <p className='size-p'>select size: </p>
                         <select className='size'  onChange={(e)=>{val.size(e,val.detail.id)}}>
                             <option value= 'XS' >XS</option>

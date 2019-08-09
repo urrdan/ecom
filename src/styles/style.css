@@ -240,17 +240,17 @@ button {
     .Item section p {
       color: gray;
       font-style: italic;
-      font-family: 'Roboto Mono'; }
+      font-family: serif; }
     .Item section h3 {
       color: #660000;
-      font-weight: 400; }
+      font-weight: 400;
+      font-style: italic; }
     .Item section .old-price {
       opacity: .5;
       text-decoration: line-through; }
 
 .Detail {
   width: 100%;
-  background: #aaaaaa;
   padding: 1px; }
   .Detail .cart-btn-btm {
     display: none; }
@@ -272,6 +272,9 @@ button {
   .Detail .detail-info {
     animation: shoe-info 2s  backwards;
     padding: 20px; }
+    .Detail .detail-info .detail-p {
+      font-family: Oxygen;
+      line-height: 1.5; }
     .Detail .detail-info .detail-price {
       color: #660000;
       font-size: 60px;
@@ -283,8 +286,7 @@ button {
     max-width: 100%; }
   .Detail .size-p {
     display: inline;
-    color: #3c3c3c;
-    font-weight: bold;
+    color: blue;
     font-size: 20px; }
   .Detail .size {
     cursor: pointer; }
