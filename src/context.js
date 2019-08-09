@@ -124,5 +124,5 @@ class Provide  extends React.Component {
     }
 }
 
-const Consume= myContext.Consumer
-export {Consume,Provide};
+const Consume = myContext.Consumer
+export { Consume , Provide };

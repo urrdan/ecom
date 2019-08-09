@@ -11,7 +11,6 @@ const TopMenu = () => {
                 {val=>{
                     document.querySelector('body div').addEventListener('click' ,function(){document.querySelector('.search-result').style.display='none'; console.log('done')} )
                     const chnager= function(el){return val.searcher(el)}
-
                     const cartTotal=val.data.reduce((total,item)=>total+(item.cart ? 1 : 0),0)
                     return(
                         <div className='TopMenu'>

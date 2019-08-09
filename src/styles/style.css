@@ -283,11 +283,16 @@ button {
     max-width: 100%; }
   .Detail .size-p {
     display: inline;
-    color: #3c3c3c; }
+    color: #3c3c3c;
+    font-weight: bold;
+    font-size: 20px; }
   .Detail .size {
     cursor: pointer; }
   .Detail .cart-btns a {
     margin-right: 10px; }
+    .Detail .cart-btns a button {
+      padding: 1px 15px;
+      font-size: 18px; }
     .Detail .cart-btns a:last-child button {
       background: none;
       color: blue;

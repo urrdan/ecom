@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Consume} from '../context.js'
 import {NavLink} from 'react-router-dom'
+
 class Cart extends Component {
     constructor(){
         super()
@@ -9,7 +10,7 @@ class Cart extends Component {
         }
     }
     cartTotal (cart,x=1) {
-        const total=cart.reduce((total,item)=>total+(item.price*(isNaN(item.quantity) ? 1 : item.quantity )),0)
+        const total = cart.reduce((total,item)=>total+(item.price*(isNaN(item.quantity) ? 1 : item.quantity )),0)
         return total*x
     }
     componentWillUnmount(){
@@ -75,8 +76,7 @@ class Cart extends Component {
                                     <section><p>Bought</p><p>${Math.round(this.cartTotal(cart)*100)/100}</p></section>
                                     <section><p>Tax</p><p>${Math.round(this.cartTotal(cart,.08)*100)/100}</p></section>
                                     <section><p>Total</p><p>${Math.round(this.cartTotal(cart,1.08)*100)/100}</p></section>
-                                    <button  onClick={()=>alert('Thank you for shopping with us we really appreciate you choose us' )}>Checkout &rarr;</button>
-                                    
+                                    <button  onClick={()=>alert('Thank you for shopping with us we really appreciate you choose us' )}>Checkout &rarr;</button>                                    
                                 </div>
                             ]
                             
