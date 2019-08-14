@@ -9,8 +9,6 @@ const TopMenu = () => {
     return ( 
             <Consume>
                 {val=>{
-                    document.querySelector('body div').addEventListener('click' ,function(){document.querySelector('.search-result').style.display='none'; console.log('done')} )
-                    const chnager= function(el){return val.searcher(el)}
                     const cartTotal=val.data.reduce((total,item)=>total+(item.cart ? 1 : 0),0)
                     return(
                         <div className='TopMenu'>
@@ -30,10 +28,10 @@ const TopMenu = () => {
                                 <div className='search'>
                                     <img src={Search} alt='Search' height='20px' className='srch'/>
                                     <input type='text' placeholder='Search' className='inpute'
-                                        //onBlur={function(e){setTimeout(function(){e.target.value=''; return val.searcher(e)},200)}} //takes me to details but breakes e is null
+                                        onBlur={function(e){e.persist(); setTimeout(function(){e.target.value=''; return val.searcher(e)},300)}} // e.persists required because settimeout is assync and react has (syntheticevent) and the two dont go together
                                         
-                                        
-                                        onChange={function(el){chnager(el); document.querySelector('.search-result').style.display='block'} }//works
+                                        //onChange={function(el){chnager(el)}} 
+                                        onChange={function(el){val.searcher(el)}} 
                                         
                                         //onChange={function(e){return function(){return val.searcher(e)}}} //doesnt work
 

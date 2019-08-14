@@ -102,7 +102,7 @@ class Provide  extends React.Component {
                 //return item
 
             })
-            //console.log(this.state.search)
+            console.log(valstr)
             return {search: updated}
             
             

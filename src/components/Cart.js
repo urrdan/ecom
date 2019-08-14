@@ -14,7 +14,7 @@ class Cart extends Component {
         return total*x
     }
     componentWillUnmount(){
-        console.log('bobobob')
+        
     }
     render() { 
         

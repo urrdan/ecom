@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom'
 
 const SearchItem = (prop) => {
     return (
-        <div className='SearchItem' onClick={function(){prop.addDetail.call(this,prop.x.id); document.querySelector('.search-result').style.display='none'}}>
+        <div className='SearchItem' onClick={function(){prop.addDetail.call(this,prop.x.id); /* document.querySelector('.search-result').style.display='none' */}}>
             <NavLink to='/detail'>
             <img src={require(`../images/${prop.x.pic}`)}   alt=''/>
             {/* <p>{prop.type}</p> */}
