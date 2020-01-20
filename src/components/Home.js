@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Item from './Item'
-import SearchItem from './SearchItem'
 import {Consume} from '../context.js'
+import {NavLink} from 'react-router-dom'
 import twitter from '../svg/twitter.svg'
 import fb from '../svg/facebook.svg'
 import instagram from '../svg/instagram.svg'
@@ -36,20 +36,10 @@ class Home extends Component {
                             }
                         }
                 </Consume>
-                <button className='all-btn' onClick={function(){
-                    //if(document.querySelector('.all-collection').clientHeight>0){
-                    document.querySelector('.all-collection').style.display='block'
-                    document.querySelector('.all-btn').style.display='none'
-                    //}else{document.querySelector('.all-collection').style.display='block'}
-                    }}>See All Collection</button>
-                <Consume>
-                    {val=>
-                        <div className='all-collection'>
-                            <h2>ALL COLLECTION</h2>
-                            {val.data.map(item=><Item key={item.id} x={item} addCart={val.addCart} addDetail={val.addDetail}/>)}
-                        </div>
-                    }
-                </Consume>
+                
+                <NavLink to="/allcollection">
+                    <button className='all-btn' >See All Collection</button>
+                </NavLink>
         
             </div>
         )

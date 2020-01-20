@@ -48,7 +48,8 @@ class Cart extends Component {
                                             <div className='cart-sec'>
                                                 <h3>{itemm.name}</h3>
                                                 <p>size: <span>{itemm.size?itemm.size: 'M'}</span></p>
-                                                <button onClick={val.removeCart.bind(this, itemm.id)}>delete</button>
+                                                <button onClick={function(){val.removeCart(itemm.id)}}>delete</button>
+                                                
                                             </div>
                                         </div>
                                         <div> 

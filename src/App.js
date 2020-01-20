@@ -6,9 +6,10 @@ import Women from './components/Women'
 import Kids from './components/Kids'
 import Cart from './components/Cart'
 import Detail from './components/Detail'
+import AllCollection from './components/AllCollection';
 import {Route, Switch} from 'react-router-dom'
 
-class App extends Component {
+class App extends Component { 
   render() {
     return (
       <div className='main'>
@@ -20,7 +21,10 @@ class App extends Component {
           <Route path='/men' component={Men}/>
           <Route path='/women' component={Women}/>
           <Route path='/kids' component={Kids}/>
+          <Route path='/allcollection' component={AllCollection}/>
         </Switch>
+
+        
         <footer className='footer'>
           <ul>
             <li>About</li>

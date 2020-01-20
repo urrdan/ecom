@@ -95,7 +95,7 @@ class Provide  extends React.Component {
                     item.subname1=item.name.slice(0,n)
                     item.subname2=item.name.slice(n,n+le)
                     item.subname3=item.name.slice(n+le)
-                    
+
                     //console.log('in')
                     return true
                 }

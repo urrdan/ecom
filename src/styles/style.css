@@ -30,6 +30,30 @@ button {
   padding: 0.1px;
   height: 100%; }
 
+.wo-men-kids, .all-collection {
+  max-width: 800px;
+  margin: auto;
+  text-align: center; }
+
+.footer {
+  background: #323232;
+  width: 100%;
+  padding: 15px 0px;
+  color: gray;
+  text-align: center; }
+  .footer ul {
+    padding: 0; }
+  .footer li {
+    list-style: none;
+    font-size: 16px;
+    margin-bottom: 12px; }
+    .footer li:hover {
+      color: white; }
+
+.Men, .Women, .Kids {
+  max-width: 1200px;
+  margin: auto; }
+
 .TopMenu {
   position: sticky;
   top: 0;
@@ -141,10 +165,7 @@ button {
     background: url("../images/shoehome.jpg") no-repeat bottom;
     background-size: 100%;
     border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    /* border-bottom:
-            left-radius: 50%  150px
-            right-radius: 50% 150px  */ }
+    border-top-right-radius: 0px; }
     .Home .home-intro > * {
       z-index: 1; }
     .Home .home-intro section {
@@ -172,10 +193,7 @@ button {
       background: rgba(0, 0, 0, 0.7);
       position: absolute;
       border-top-left-radius: 0px;
-      border-top-right-radius: 0px;
-      /* border-bottom:
-                left-radius: 50%  150px
-                right-radius: 50% 150px */ }
+      border-top-right-radius: 0px; }
   .Home .category {
     text-align: center;
     display: flex;
@@ -308,6 +326,20 @@ button {
     margin: auto;
     text-align: center; }
 
+@keyframes shoe {
+  0% {
+    transform: rotate(10deg);
+    margin-top: -100px; }
+  100% {
+    transform: rotate(0deg);
+    margin-top: 0px; } }
+
+@keyframes shoe-info {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 .cart {
   min-height: 400px;
   max-width: 900px;
@@ -365,44 +397,6 @@ button {
       margin: auto;
       margin-top: 120px;
       font-size: 1.5em; }
-
-.wo-men-kids {
-  max-width: 800px;
-  margin: auto;
-  text-align: center; }
-
-.footer {
-  background: #323232;
-  width: 100%;
-  padding: 15px 0px;
-  color: gray;
-  text-align: center; }
-  .footer ul {
-    padding: 0; }
-  .footer li {
-    list-style: none;
-    font-size: 16px;
-    margin-bottom: 12px; }
-    .footer li:hover {
-      color: white; }
-
-.Men, .Women, .Kids {
-  max-width: 1200px;
-  margin: auto; }
-
-@keyframes shoe {
-  0% {
-    transform: rotate(10deg);
-    margin-top: -100px; }
-  100% {
-    transform: rotate(0deg);
-    margin-top: 0px; } }
-
-@keyframes shoe-info {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
 
 @media screen and (max-width: 600px) {
   .Detail .cart-btn-top {

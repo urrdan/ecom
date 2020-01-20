@@ -1,0 +1,32 @@
+@media screen and (max-width: 600px)
+    .Detail
+        .cart-btn-top
+            display: none
+        .cart-btn-btm
+            display: block
+            white-space: nowrap
+
+@media screen and (max-width: 470px)
+    .TopMenu1
+        .max-width
+            .search
+                border: none
+                width: 25px
+                overflow: hidden
+                &:hover
+                    width: 40%
+                    flex-direction: row-reverse
+                    border: solid white 1px
+                
+    .Home
+        .home-intro
+            height: auto
+    .Detail
+        .grid-cont
+            grid-template-columns: 1fr
+        .detail-head
+            grid-column: 1/2
+            
+        .detail-pic
+            grid-row: 2/3
+            max-width: 50%

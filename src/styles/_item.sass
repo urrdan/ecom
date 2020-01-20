@@ -1,0 +1,58 @@
+.Item
+    display: inline-block
+    margin: 25px
+    width: 190px
+    .pic
+        height: 230px
+        text-align: center
+        border-radius: 6px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        position: relative
+        &:hover
+            >.pic-bg
+                transform: scale(0.8)
+            img
+                transform: scale(1.2)
+
+        
+        .pic-bg
+            position: absolute
+            background: white
+            width: 160px
+            height: 160px
+            border-radius: 200px
+            z-index: 0
+            transition: 0.6s
+        a
+            z-index: 1
+        img
+            max-width: 220px
+            max-height: 240px
+            transition: 0.6s
+
+    section
+        padding: 5px
+        font-family: Muli
+        text-align: left
+        >*
+            padding: 0px
+            margin: 2px 0px
+        h1
+            font-weight: 400
+            
+
+        p
+            color: gray
+            font-style: italic
+            font-family: serif
+
+        h3
+            color: $color1
+            font-weight: 400 
+            font-style: italic
+        .old-price
+            opacity: .5
+            text-decoration: line-through
